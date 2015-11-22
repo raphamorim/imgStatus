@@ -20,15 +20,23 @@
 
         this.total = images.length;
         for (var i = 0; i < images.length; i++) {
-            if (images[i].addEventListener) {
-                images[i].addEventListener('load', ready.bind(this, fn));
-                images[i].addEventListener('error', fail.bind(this, fn));
+            if (is_cached(images[i].src))
+                this.ready(fn);
+            else if (images[i].addEventListener) {
+                images[i].addEventListener('load', this.ready.bind(this, fn));
+                images[i].addEventListener('error', this.fail.bind(this, fn));
             }
             else {
-                images[i].attachEvent('onload', ready.bind(this, fn));
-                images[i].attachEvent('onerror', fail.bind(this, fn));
+                images[i].attachEvent('onload', this.ready.bind(this, fn));
+                images[i].attachEvent('onerror', this.fail.bind(this, fn));
             }
         }
+    }
+
+    this.is_cached = function(src) {
+        var image = new Image();
+        image.src = src;
+        return image.complete;
     }
 
     this.fail = function(fn, e) {
