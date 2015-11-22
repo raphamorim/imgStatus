@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>imgStatus - Detect when images have been loaded without jQuery</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <section>
+        <header>
+            <p class="signature">Made by <a href="http://github.com/raphamorim"><span>@raphamorim</span></a></p>
+            <h1>imgStatus.js <span>(Minified File: 503bytes)</span></h1>
+            <h2>Detect when images have been loaded without jQuery</h2>
+            <h3>Disability cache OR force refresh to test again</h3>
+        </header>
+    </section>
+    <section class="example">
+        <div class="grid desc">
+            <p>
+                <strong>Status: </strong><br>
+                <span class="images-status">Loading...</span>
+            </p>
+            <p>
+                <strong>Total of Images Loaded: </strong><br>
+                <span class="images-loaded">0</span>
+            </p>
+            <p>
+                <strong>Total of Images Failed: </strong><br>
+                <span class="images-failed">0</span>
+            </p>
+        </div>
+        <div class="grid watch">
+            <li>
+                <img class="image" src="http://www.gopetition.com/images/db/origin/30893.jpg" alt="Hyouka">
+            </li>
+            <li>
+                <img class="image" src="http://static.tumblr.com/28a03f5f65a9f896b5aaa13761cbac7c/uqi9jwm/Ksumnmyne/tumblr_static_344965.jpg" alt="Steins;Gate">
+            </li>
+            <li>
+                <img class="image" src="https://myanimeparadise.files.wordpress.com/2015/10/animebatch-513.jpg" alt="Barakamon">
+            </li>
+            <li>
+                <img class="image" src="https://my2dworld.files.wordpress.com/2012/07/9kc.jpg" alt="Kokoro Connect">
+            </li>
+            <li>
+                <img class="image" src="https://historiasdeumotaku.files.wordpress.com/2015/06/vlcsnap-2014-08-31-22h51m56s721.png" alt="Gekkan Shoujo Nozaki-kun">
+            </li>
+            <li>
+                <img class="image" src="http://www.quasenerdoficial.com.br/wp-content/uploads/2015/09/yu-yu_00326940.jpg" alt="Yu Yu Hakusho">
+            </li>
+            <li>
+                <img class="image" src="http://vignette2.wikia.nocookie.net/medabots/images/c/c3/Medabot_Metabee.jpg/revision/latest?cb=20140411184400" alt="Medabots">
+            </li>
+            <li>
+                <img class="image" src="https://i.ytimg.com/vi/PVUVG2Mr8bQ/maxresdefault.jpg" alt="Dragon Ball Z">
+            </li>
+        </div>
+    </section>
+    <section>
+        <header>
+            <h1>How get this?</h1>
+            <h2>
+        </header>
+    </section>
+
+    <script src="imgStatus.js"></script>
+    <script>
+        var imagesLoaded = document.querySelector('.images-loaded'),
+            imagesFailed = document.querySelector('.images-failed'),
+            imagesStatus = document.querySelector('.images-status');
+
+        imgStatus.watch('.image', function(imgs){
+            imagesLoaded.innerHTML = imgs.loaded;
+            imagesFailed.innerHTML = imgs.failed;
+            if (imgs.done())
+                imagesStatus.innerHTML = 'Completed!';
+        });
+    </script>
+</body>
+</html>

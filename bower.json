@@ -1,0 +1,22 @@
+{
+  "name": "imgStatus",
+  "version": "0.1.0",
+  "authors": [
+    "Raphael Amorim <rapha850@gmail.com>"
+  ],
+  "description": "Detect when images have been loaded without jQuery",
+  "main": "imgStatus.js",
+  "keywords": [
+    "load",
+    "loaded",
+    "fail",
+    "failed",
+    "images",
+    "img",
+    "div",
+    "status",
+    "fallback",
+    "total"
+  ],
+  "license": "MIT"
+}

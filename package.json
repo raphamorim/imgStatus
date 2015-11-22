@@ -1,0 +1,32 @@
+{
+  "name": "imgstatus",
+  "version": "0.1.0",
+  "description": "Detect when images have been loaded without jQuery",
+  "main": "imgStatus.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphamorim/imgStatus.git"
+  },
+  "keywords": [
+    "load",
+    "loaded",
+    "fail",
+    "failed",
+    "images",
+    "imgs",
+    "status",
+    "img",
+    "div",
+    "fallback",
+    "total"
+  ],
+  "author": "Raphael Amorim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raphamorim/imgStatus/issues"
+  },
+  "homepage": "https://github.com/raphamorim/imgStatus#readme"
+}
