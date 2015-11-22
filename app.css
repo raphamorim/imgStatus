@@ -6,6 +6,7 @@ section {
   margin: 0px auto;
   width: 1120px;
   padding: 15px;
+  margin-top: 10px;
 }
 
 header .signature {
@@ -47,6 +48,17 @@ header h2 {
 
 header h3 {
   color: #5E5B64;
+}
+
+section>h1 {
+  color: #5E5B64;
+  font-size: 60px;
+  margin-top: 80px;
+  margin-bottom: -10px;
+}
+
+section>h2 {
+  color: #333;
 }
 
 section.example {
@@ -96,4 +108,20 @@ section .grid.watch img {
 section .images-status {
   font-size: 20px;
   color: #5E5B64;
+}
+
+section .download-link {
+  padding: 10px;
+  background: #63C7EA;
+  color: #FFF;
+  text-decoration: none;
+}
+
+footer {
+  height: 30px;
+  width: 100%;
+  background: #5E5B64;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 100px;
 }
