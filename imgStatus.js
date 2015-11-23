@@ -21,14 +21,14 @@
         this.total = images.length;
         for (var i = 0; i < images.length; i++) {
             if (isCached(images[i].src))
-                this.ready(fn);
+                this.setLoaded(fn);
             else if (images[i].addEventListener) {
-                images[i].addEventListener('load', this.ready.bind(this, fn));
-                images[i].addEventListener('error', this.fail.bind(this, fn));
+                images[i].addEventListener('load', this.setLoaded.bind(this, fn));
+                images[i].addEventListener('error', this.setFailed.bind(this, fn));
             }
             else {
-                images[i].attachEvent('onload', this.ready.bind(this, fn));
-                images[i].attachEvent('onerror', this.fail.bind(this, fn));
+                images[i].attachEvent('onload', this.setLoaded.bind(this, fn));
+                images[i].attachEvent('onerror', this.setFailed.bind(this, fn));
             }
         }
     }
@@ -39,13 +39,13 @@
         return image.complete;
     }
 
-    this.fail = function(fn, e) {
+    this.setFailed = function(fn, e) {
         ++this.failed;
         if (typeof fn === "function")
             fn(this);
     }
 
-    this.ready = function(fn, e) {
+    this.setLoaded = function(fn, e) {
         ++this.loaded;
         if (typeof fn === "function")
             fn(this);
