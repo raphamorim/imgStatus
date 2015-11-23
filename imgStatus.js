@@ -51,7 +51,7 @@
             fn(this);
     };
 
-    this.done = function() {
+    this.is_done = function() {
         return ((this.loaded + this.failed) === this.total)? true:false;
     }
 
