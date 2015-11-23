@@ -13,10 +13,10 @@
     this.loaded = 0;
     this.failed = 0;
     this.total = 0;
-    this.watch = function(imgClasses, fn) {
-        var images = document.querySelectorAll(imgClasses);
+    this.watch = function(selector, fn) {
+        var images = document.querySelectorAll(selector);
         if (!images.length)
-            return console.log('[imgStatus]: There aren\'t any images associated with this class (' + imgClasses + ')!');
+            return console.log('[imgStatus]: There aren\'t any images associated with this selector (' + selector + ')!');
 
         this.total = images.length;
         for (var i = 0; i < images.length; i++) {
