@@ -20,7 +20,7 @@
 
         this.total = images.length;
         for (var i = 0; i < images.length; i++) {
-            if (is_cached(images[i].src))
+            if (isCached(images[i].src))
                 this.ready(fn);
             else if (images[i].addEventListener) {
                 images[i].addEventListener('load', this.ready.bind(this, fn));
@@ -33,7 +33,7 @@
         }
     }
 
-    this.is_cached = function(src) {
+    this.isCached = function(src) {
         var image = new Image();
         image.src = src;
         return image.complete;
@@ -51,7 +51,7 @@
             fn(this);
     };
 
-    this.done = function() {
+    this.isDone = function() {
         return ((this.loaded + this.failed) === this.total)? true:false;
     }
 
