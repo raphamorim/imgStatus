@@ -78,7 +78,7 @@
             <pre><code class="language-javascript">imgStatus.watch('.image', function(imgs){
     console.log(imgs.loaded); // Number of Images Loaded (Type: integer)
     console.log(imgs.failed); // Number of Images Failed (Type: integer)
-    console.log(imgs.done()); // If all ready try load the images (Type: boolean)
+    console.log(imgs.done()); // If already load OR fail every image (Type: boolean)
 });</code></pre>
             <h2>See the source code which was used in the above example</h2> 
             <pre><code class="language-javascript">var imagesLoaded = document.querySelector('.images-loaded'),
