@@ -82,10 +82,10 @@
 });</code></pre>
             <h2>See the source code which was used in the above example</h2> 
             <pre><code class="language-javascript">var imagesLoaded = document.querySelector('.images-loaded'),
-imagesFailed = document.querySelector('.images-failed'),
-imagesStatus = document.querySelector('.images-status');
+    imagesFailed = document.querySelector('.images-failed'),
+    imagesStatus = document.querySelector('.images-status');
 
-imgStatus.watch('.image', function(imgs){
+imgStatus.watch('.image', function(imgs) {
     imagesLoaded.innerHTML = imgs.loaded;
     imagesFailed.innerHTML = imgs.failed;
     if (imgs.done())
