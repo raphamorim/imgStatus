@@ -16,7 +16,7 @@
     this.watch = function(imgClasses, fn) {
         var images = document.querySelectorAll(imgClasses);
         if (!images.length)
-            return console.log('[imgStatus]: Doesn\'t exists any images with this class!');
+            return console.log('[imgStatus]: There aren\'t any images associated with this class (' + imgClasses + ')!');
 
         this.total = images.length;
         for (var i = 0; i < images.length; i++) {
