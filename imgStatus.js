@@ -9,21 +9,17 @@
    + Documentation: https://github.com/raphamorim/imgstatus
 */
 
-;(function(obj) {
-   obj = {};
+;(function() {
+   imgStatus = { loaded: 0, failed: 0, total: 0 };
 
-    obj.loaded = 0;
-    obj.failed = 0;
-    obj.total = 0;
-
-    obj.watch = function(imgClasses, fn) {
+    imgStatus.watch = function(imgClasses, fn) {
         var images = document.querySelectorAll(imgClasses);
         if (!images.length)
             return console.log('[imgStatus]: Doesn\'t exists any images with this class!');
 
         this.total = images.length;
         for (var i = 0; i < images.length; i++) {
-            if (isCached(images[i].src))
+            if (this.isCached(images[i].src))
                 this.ready(fn);
             else if (images[i].addEventListener) {
                 images[i].addEventListener('load', this.ready.bind(this, fn));
@@ -36,25 +32,25 @@
         }
     }
 
-    obj.isCached = function(src) {
+    imgStatus.isCached = function(src) {
         var image = new Image();
         image.src = src;
         return image.complete;
     }
 
-    obj.fail = function(fn, e) {
+    imgStatus.fail = function(fn, e) {
         ++this.failed;
         if (typeof fn === "function")
             fn(this);
     }
 
-    obj.ready = function(fn, e) {
+    imgStatus.ready = function(fn, e) {
         ++this.loaded;
         if (typeof fn === "function")
             fn(this);
     };
 
-    obj.isDone = function() {
+    imgStatus.isDone = function() {
         return ((this.loaded + this.failed) === this.total)? true:false;
     }
-}(imgStatus));
+}());
