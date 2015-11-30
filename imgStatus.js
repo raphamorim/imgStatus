@@ -3,7 +3,7 @@
    imgStatus.js
    --------------------------------
    + https://github.com/raphamorim/imgstatus
-   + version 0.1.1
+   + version 0.1.2
    + Copyright 2015 Raphael Amorim
    + Licensed under the MIT license
    + Documentation: https://github.com/raphamorim/imgstatus
@@ -19,7 +19,7 @@
             return console.log('[imgStatus]: There aren\'t any images associated with this selector (' + selector + ')!');
 
         this.total = images.length;
-        for (var i = 0; i < images.length; i++) {
+        for (var i = 0; i < this.total; i++) {
             if (isCached(images[i].src))
                 this._setLoaded(fn);
             else if (images[i].addEventListener) {
