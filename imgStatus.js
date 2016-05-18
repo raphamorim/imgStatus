@@ -14,7 +14,7 @@
     this.failed = 0;
     this.total = 0;
     this.watch = function(selector, fn) {
-        var images = document.querySelectorAll(selector);
+        var images = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
         if (!images.length)
             return console.log('[imgStatus]: There aren\'t any images associated with this selector (' + selector + ')!');
 
